@@ -68,8 +68,9 @@ exit:
     int 21h
 
 read_num proc
+    push cx
     mov bx,0
-    mov dx,10
+    mov cx,10
 
 read_loop:
     mov ah,01h
@@ -82,7 +83,7 @@ read_loop:
     push ax
 
     mov ax,bx
-    mul dx
+    mul cx
     mov bx,ax
     pop ax
     add bx,ax
@@ -90,6 +91,7 @@ read_loop:
 
 done_input:
     mov ax,bx
+    pop cx
     ret
 read_num endp
 

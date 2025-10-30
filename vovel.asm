@@ -20,12 +20,12 @@ start:
     int 21h
 
     lea dx,MAX_LEN
-    mov ah,0ah
+    mov ah,0ah ; string -> character stream/array
     int 21h
 
     lea si,INPUT_STRING
     mov bx,0
-    mov cx,0
+    mov ch,0
     mov cl,ACTUAL_LEN
 
 check_char:
@@ -42,7 +42,7 @@ check_char:
     je vovel_found
     cmp al,"O"
     je vovel_found
-    cmp al,"u"
+    cmp al,"U"
     je vovel_found
     cmp al,"a"
     je vovel_found

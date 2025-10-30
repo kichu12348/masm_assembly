@@ -101,12 +101,12 @@ print_num proc
 
 convert_loop:
     xor dx,dx
-    cmp ax,0
-    je print_loop
     div bx
     add dl,"0"
     push dx
     inc cx
+    cmp ax,0
+    je print_loop
     jmp convert_loop
 
 print_loop:

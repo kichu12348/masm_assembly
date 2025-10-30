@@ -32,7 +32,6 @@ input_arr_loop:
     call read_num
     mov [di],ax
     add di,2
-    dec dx
     loop input_arr_loop
 
     lea dx,msg1
